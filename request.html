@@ -560,7 +560,7 @@
            </div>
            <div class="col-xl-2 col-lg-6 col-md-6 col-6">
              <div class="tp-header-right d-flex align-items-center justify-content-end">
-               <div class="tp-header-search">
+               <div class="tp-header-search d-none d-md-block">
                  <a href="request.html" style="display: block !important;">
                    <button class="tp-header-demo-btn">Request a Demo</button>
                  </a>
@@ -867,7 +867,35 @@
       </div>
    </div>
 </div>
+<style>
+  /* Hamburger (offcanvas-open-btn) icon color before scroll (black) */
+  .tp-header-area.tp-header-transparent .offcanvas-open-btn svg rect {
+    fill: #222 !important;
+    transition: fill 0.3s;
+  }
+  /* Hamburger icon color after scroll (white) */
+  .tp-header-area.tp-header-transparent.scrolled .offcanvas-open-btn svg rect {
+    fill: #fff !important;
+  }
+</style>
 
+<!-- Your existing header and offcanvas code remains unchanged -->
+
+<!-- Update your scroll script to ensure .scrolled is toggled -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.tp-header-area.tp-header-transparent');
+    function onScroll() {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  });
+</script>
 
 
 
@@ -1464,327 +1492,71 @@
 document.addEventListener('DOMContentLoaded', initMobileMenu);
 </script>
 <script>
-   // Add this after your existing scripts
-   document.addEventListener('DOMContentLoaded', function() {
-       // Create popup elements
-       const overlay = document.createElement('div');
-       overlay.className = 'video-popup-overlay';
-       
-       const container = document.createElement('div');
-       container.className = 'video-popup-container';
-       
-       const closeBtn = document.createElement('div');
-       closeBtn.className = 'video-popup-close';
-       closeBtn.innerHTML = '×';
-       
-       const iframe = document.createElement('iframe');
-       iframe.className = 'video-popup-iframe';
-       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-       iframe.allowFullscreen = true;
-       
-       container.appendChild(closeBtn);
-       container.appendChild(iframe);
-       document.body.appendChild(overlay);
-       document.body.appendChild(container);
-       
-       // Handle video clicks
-       document.querySelectorAll('.video-popup').forEach(link => {
-           link.addEventListener('click', function(e) {
-               e.preventDefault();
-               const videoUrl = this.getAttribute('data-video-url');
-               iframe.src = videoUrl;
-               overlay.style.display = 'block';
-               container.style.display = 'block';
-           });
-       });
-       
-       // Handle close click
-       [overlay, closeBtn].forEach(el => {
-           el.addEventListener('click', function() {
-               overlay.style.display = 'none';
-               container.style.display = 'none';
-               iframe.src = '';
-           });
-       });
-   });
-   </script>
-   <!-- Add this script before the closing body tag -->
-
-
-     <script>
-      // Mobile Menu Functionality with Animation
- document.addEventListener('DOMContentLoaded', function() {
-   // Toggle main menu items
-   const toggleMenuLinks = document.querySelectorAll('.toggle-menu');
-   toggleMenuLinks.forEach(link => {
-     link.addEventListener('click', function(e) {
-       e.preventDefault();
-       const subMenu = this.nextElementSibling;
-       
-       // Close other open main menus
-       toggleMenuLinks.forEach(otherLink => {
-         if (otherLink !== this && otherLink.classList.contains('active')) {
-           otherLink.classList.remove('active');
-           const otherMenu = otherLink.nextElementSibling;
-           otherMenu.classList.remove('active');
-         }
-       });
-       
-       // Toggle current menu
-       this.classList.toggle('active');
-       subMenu.classList.toggle('active');
-     });
-   });
-   
-   // Toggle submenu items
-   const toggleSubMenuLinks = document.querySelectorAll('.toggle-submenu');
-   toggleSubMenuLinks.forEach(link => {
-     link.addEventListener('click', function(e) {
-       e.preventDefault();
-       const innerSubMenu = this.nextElementSibling;
-       
-       // Close other open submenus at this level
-       const siblings = Array.from(this.parentElement.parentElement.children)
-         .filter(el => el !== this.parentElement)
-         .map(el => el.querySelector('.toggle-submenu'))
-         .filter(Boolean);
-         
-       siblings.forEach(sibling => {
-         if (sibling.classList.contains('active')) {
-           sibling.classList.remove('active');
-           sibling.nextElementSibling.classList.remove('active');
-         }
-       });
-       
-       // Toggle current submenu
-       this.classList.toggle('active');
-       innerSubMenu.classList.toggle('active');
-     });
-   });
- });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-         // Set min date for calendar to today
-         const today = new Date();
-         const formattedDate = today.toISOString().split('T')[0];
-         document.getElementById('demo-date').min = formattedDate;
-         
-         // Step navigation
-         const nextButtons = document.querySelectorAll('.next-step');
-         const prevButtons = document.querySelectorAll('.prev-step');
-         const steps = document.querySelectorAll('.demo-step');
-         
-         nextButtons.forEach(button => {
-            button.addEventListener('click', function() {
-               const currentStep = parseInt(this.dataset.step);
-               const prevStep = currentStep - 1;
-               
-               // Validate current step before proceeding
-               if (validateStep(prevStep)) {
-                  // Hide current step
-                  document.getElementById('step' + prevStep).style.display = 'none';
-                  // Show next step
-                  document.getElementById('step' + currentStep).style.display = 'block';
-                  
-                  // Update step indicator
-                  steps.forEach(step => {
-                     const stepNum = parseInt(step.dataset.step);
-                     if (stepNum < currentStep) {
-                        step.classList.add('completed');
-                        step.classList.remove('active');
-                     } else if (stepNum === currentStep) {
-                        step.classList.add('active');
-                     } else {
-                        step.classList.remove('active', 'completed');
-                     }
-                  });
-               }
-            });
-         });
-         
-         prevButtons.forEach(button => {
-            button.addEventListener('click', function() {
-               const currentStep = parseInt(this.dataset.step);
-               const nextStep = currentStep + 1;
-               
-               // Hide current step
-               document.getElementById('step' + nextStep).style.display = 'none';
-               // Show previous step
-               document.getElementById('step' + currentStep).style.display = 'block';
-               
-               // Update step indicator
-               steps.forEach(step => {
-                  const stepNum = parseInt(step.dataset.step);
-                  if (stepNum < currentStep) {
-                     step.classList.add('completed');
-                     step.classList.remove('active');
-                  } else if (stepNum === currentStep) {
-                     step.classList.add('active');
-                  } else {
-                     step.classList.remove('active', 'completed');
-                  }
-               });
-            });
-         });
-         
-         // Form validation functions - UPDATED FOR DROPDOWNS
-         function validateStep(step) {
-  switch(step) {
-    case 1:
-      const industry = document.getElementById('industries').value;
-      const service = document.getElementById('service-offerings').value;
-      const technology = document.getElementById('technologies').value;
-      
-      if (!industry && !service && !technology) {
-        alert('Please select at least one option from Industry Solutions, Service Offerings, or Technologies.');
-        return false;
-      }
-      
-                  
-                  // Validate date and time selection
-                  const demoDate = document.getElementById('demo-date').value;
-                  const timeSlot    = form.querySelector('select[name="time-slot"]').value.trim();
-                  const timezone    = form.querySelector('select[name="timezone"]').value.trim();
-                  if (!demoDate) {
-                     alert('Please select a date for your demo.');
-                     return false;
-                  }
-                  
-                  if (!timeSlot) {
-                     alert('Please select a time slot for your demo.');
-                     return false;
-                  }
-                  
-                  if (!timezone) {
-                     alert('Please select your timezone.');
-                     return false;
-                  }
-                  
-                  return true;
-               
-               case 2:
-                  // Validate personal details
-                  const firstName = document.querySelector('input[name="first_name"]').value;
-                  const lastName = document.querySelector('input[name="last_name"]').value;
-                  const email = document.querySelector('input[name="email"]').value;
-                  const phone = document.querySelector('input[name="phone"]').value;
-                  const consent = document.getElementById('consent').checked;
-                  
-                  if (!firstName || !lastName) {
-                     alert('Please enter your full name.');
-                     return false;
-                  }
-                  
-                  if (!email) {
-                     alert('Please enter your email address.');
-                     return false;
-                  }
-                  
-                  // Simple email validation
-                  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                  if (!emailRegex.test(email)) {
-                     alert('Please enter a valid email address.');
-                     return false;
-                  }
-                  
-                  if (!phone) {
-                     alert('Please enter your phone number.');
-                     return false;
-                  }
-                  
-                  if (!consent) {
-                     alert('Please agree to receive communications about Collabridge services and solutions.');
-                     return false;
-                  }
-                  
-                  return true;
-                  
-               default:
-                  return true;
-            }
-         }
-      });      
-      </script>
-
-<script>
   document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('demoRequestForm');
     const scheduleBtn = document.getElementById('scheduleDemoBtn');
-    const formContainer = document.querySelector('.tp-contact-details-form');
+    const formBox = document.querySelector('.form-box-fix');
 
-    scheduleBtn.addEventListener('click', function(e) {
+    // Google reCAPTCHA v3 integration and real backend submission only
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      grecaptcha.ready(function () {
-        grecaptcha.execute('6Ld_gasrAAAAABeWxRfBlS1ZDVG3OjgBHPWWc1eA', { action: 'submit' }).then(function (token) {
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld_gasrAAAAABeWxRfBlS1ZDVG3OjgBHPWWc1eA', {action: 'submit'}).then(function(token) {
           document.getElementById('g-recaptcha-token').value = token;
 
           // Collect form data
           const formData = new FormData(form);
 
           // Basic validation
-            const firstName   = form.querySelector('input[name="first_name"]').value.trim();
+          const firstName   = form.querySelector('input[name="first_name"]').value.trim();
           const lastName    = form.querySelector('input[name="last_name"]').value.trim();
           const email       = form.querySelector('input[name="email"]').value.trim();
-          const phone       = form.querySelector('input[name="phone"]').value.trim();
-          const demoDate    = form.querySelector('#demo-date').value.trim();
-          const timeSlot    = form.querySelector('#time-slot').value.trim();
-          const timezone    = form.querySelector('#timezone').value.trim();
-          const industry    = form.querySelector('select[name="industry"]').value.trim();
-          const service     = form.querySelector('select[name="service"]').value.trim();
-          const technology  = form.querySelector('select[name="technology"]').value.trim();
-          const requirements = form.querySelector('textarea[name="requirements"]').value.trim();
+          const demoDate    = form.querySelector('input[name="demo-date"]').value.trim();
+          const timeSlot    = form.querySelector('select[name="time-slot"]').value.trim();
+          const timezone    = form.querySelector('select[name="timezone"]').value.trim();
           const consent     = form.querySelector('#consent').checked;
-          const recaptcha   = document.getElementById('g-recaptcha-token').value;
 
-         if (
-    !firstName || !lastName || !email || !consent || !recaptcha
-) {
-    alert("Please fill in all required fields");
-    return;
-}
+          if (!firstName || !lastName || !email || !consent) {
+            alert("Please fill in all required fields");
+            return;
+          }
 
-          // Send data to PHP script
+          // Build the date/time string
+          let dateTimeMsg = "";
+          if (demoDate) {
+            dateTimeMsg = `on ${demoDate}`;
+            if (timeSlot) {
+              dateTimeMsg += ` at ${timeSlot}`;
+              if (timezone) {
+                dateTimeMsg += ` (${timezone})`;
+              }
+            }
+          }
+
+          // Real backend submission
           fetch('send_demo.php', {
             method: 'POST',
             body: formData
           })
           .then(response => response.text())
           .then(data => {
-            // Hide the current form step
-            const step2 = document.getElementById('step2');
-            if (step2) {
-                step2.style.display = 'none';
-            }
-
-            // Remove any existing thank you message
-            const existingMessage = formContainer.querySelector('.thank-you-message');
-            if (existingMessage) {
-                existingMessage.remove();
-            }
-
-            // Show thank you message
-            const thankYouMessage = document.createElement('div');
-            thankYouMessage.className = 'thank-you-message text-center';
-            thankYouMessage.innerHTML = `
+            formBox.innerHTML = `
+              <div class="thank-you-message text-center" style="padding:40px 10px;">
                 <div class="success-icon mb-4">
-                    <i class="fa-solid fa-check-circle" style="font-size: 48px; color: #28a745;"></i>
+                  <i class="fa-solid fa-check-circle" style="font-size: 48px; color: #28a745;"></i>
                 </div>
                 <h3 class="mb-3" style="color: #474ed4;">Thank You, ${firstName} ${lastName}!</h3>
-                <p class="mb-4">Your demo is scheduled on ${demoDate} at ${timeSlot} (${timezone}).<br>
+                <p class="mb-4">Your demo is scheduled ${dateTimeMsg ? dateTimeMsg : ''}.<br>
                 We will get back to you shortly to confirm your appointment.</p>
                 <div class="mt-4">
-                    <a href="index.html" class="tp-btn" 
-                       style="display: inline-block; padding: 10px 20px; text-decoration: none; 
-                              background: #474ed4; color: white;">
-                        Return to Homepage
-                    </a>
+                  <a href="index.html" class="tp-btn" 
+                    style="display: inline-block; padding: 10px 20px; text-decoration: none; background: #474ed4; color: white;">
+                    Return to Homepage
+                  </a>
                 </div>
+              </div>
             `;
-            formContainer.appendChild(thankYouMessage);
-            thankYouMessage.scrollIntoView({ behavior: 'smooth' });
-            form.reset();
           })
           .catch(error => {
             alert('There was an error submitting your request. Please try again later.');
