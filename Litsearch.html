@@ -1042,42 +1042,62 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="ls-content-wrapper">
           <!-- Interactive Info Cards -->
 <div class="info-cards" style="display: flex; gap: 20px; margin-bottom: 40px; justify-content: center;">
-  <!-- Card 1 -->
-  <div class="info-card" data-tab="overview" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+  <!-- Card 1: ICSR Extraction -->
+  <div class="info-card" data-tab="icsr" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
     <div class="card-icon" style="width: 60px; height: 60px; margin: 0 auto 15px; background: rgba(217,10,44,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2a4 4 0 0 1 4 4c0 1.5-.8 2.8-2 3.4v1.6h-4V9.4A4 4 0 0 1 12 2z"/>
-        <path d="M16 16a4 4 0 0 1-8 0v-3h8v3z"/>
-        <path d="M7 8h10"/>
-        <path d="M10 12h4"/>
+        <rect x="3" y="7" width="18" height="13" rx="2"/>
+        <path d="M16 3v4"/>
+        <path d="M8 3v4"/>
+        <path d="M3 11h18"/>
       </svg>
     </div>
-    <h3 style="font-size: 16px; color: #1d3557; margin: 0; transition: color 0.3s ease;">AI-Powered Research</h3>
+    <h3 style="font-size: 16px; color: #1d3557; margin: 0;">ICSR Extraction</h3>
   </div>
 
-  <!-- Card 2 -->
-  <div class="info-card" data-tab="features" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+  <!-- Card 2: E2B (R3) XML Compatibility -->
+  <div class="info-card" data-tab="e2b" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
     <div class="card-icon" style="width: 60px; height: 60px; margin: 0 auto 15px; background: rgba(217,10,44,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"/>
-        <path d="m21 21-4.3-4.3"/>
-        <path d="M11 8v6"/>
-        <path d="M8 11h6"/>
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <path d="M7 7h10M7 12h10M7 17h6"/>
       </svg>
     </div>
-    <h3 style="font-size: 16px; color: #1d3557; margin: 0; transition: color 0.3s ease;">Smart Analysis</h3>
+    <h3 style="font-size: 16px; color: #1d3557; margin: 0;">E2B (R3) XML Compatibility</h3>
   </div>
 
-  <!-- Card 3 -->
-  <div class="info-card" data-tab="benefits" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+  <!-- Card 3: PREP Validation -->
+  <div class="info-card" data-tab="prep" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
     <div class="card-icon" style="width: 60px; height: 60px; margin: 0 auto 15px; background: rgba(217,10,44,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="10"/>
-        <path d="M2 12h20"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        <path d="M9 12l2 2 4-4"/>
       </svg>
     </div>
-    <h3 style="font-size: 16px; color: #1d3557; margin: 0; transition: color 0.3s ease;">Deep Insights</h3>
+    <h3 style="font-size: 16px; color: #1d3557; margin: 0;">PREP Validation</h3>
+  </div>
+
+  <!-- Card 4: Duplicate Detection -->
+  <div class="info-card" data-tab="duplicate" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+    <div class="card-icon" style="width: 60px; height: 60px; margin: 0 auto 15px; background: rgba(217,10,44,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="7" y="7" width="13" height="13" rx="2"/>
+        <rect x="3" y="3" width="13" height="13" rx="2"/>
+      </svg>
+    </div>
+    <h3 style="font-size: 16px; color: #1d3557; margin: 0;">Duplicate Detection</h3>
+  </div>
+
+  <!-- Card 5: Region-based Journal Search -->
+  <div class="info-card" data-tab="region" style="flex: 1; max-width: 200px; padding: 20px; border-radius: 20px; background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+    <div class="card-icon" style="width: 60px; height: 60px; margin: 0 auto 15px; background: rgba(217,10,44,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h4M18 12h4M12 2v4M12 18v4"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </div>
+    <h3 style="font-size: 16px; color: #1d3557; margin: 0;">Region-based Journal Search</h3>
   </div>
 </div>
 
@@ -1113,13 +1133,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>Literature Search AI</h2>
                     <p class="highlight">Transform scientific literature review with AI-powered intelligence</p>
                     <p class="description">
-                      At Collabridge, we revolutionize literature surveillance through advanced AI and NLP technologies. Our system automates complex research processes, ensuring comprehensive coverage and precise insights.
-                    </p>
-                    
+At Collabridge, we revolutionize literature surveillance with AI and NLP, automating ICSR extraction, PREP validation, and case categorization while ensuring compliance with global standards. With smart features like duplicate detection, MedDRA mapping, and advanced indexed searches across PubMed and Google Scholar, our platform delivers faster, more accurate, and consistent insights worldwide.                    
                     <div class="feature-tags">
-                      <span class="tag"><i class="fa-light fa-check"></i>Global Database Scanning</span>
-                      <span class="tag"><i class="fa-light fa-check"></i>Real-time Monitoring</span>
-                      <span class="tag"><i class="fa-light fa-check"></i>Smart Summarization</span>
+                      <span class="tag"><i class="fa-light fa-check"></i>Multilingual support </span>
+                      <span class="tag"><i class="fa-light fa-check"></i>Smart Agent</span>
+                      <span class="tag"><i class="fa-light fa-check"></i>MedDRA mapping  </span>
                     </div>
                   </div>
                   
@@ -1514,20 +1532,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <section class="why-choose-section">
   <div class="ls-container">
     <div class="section-header">
-
       <h2>Literature Search AI Advantage</h2>
     </div>
-    
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-          </svg>
-        </div>
-        <h3>Advanced AI Technology</h3>
-        <p>State-of-the-art NLP models for precise literature analysis and interpretation</p>
-      </div>
+   
 
       <div class="benefit-card">
         <div class="benefit-icon">
@@ -1553,45 +1561,60 @@ document.addEventListener('DOMContentLoaded', function() {
         <p>Automated extraction of key insights and intelligent content summarization</p>
       </div>
 
+     
+      <!-- New Card: Audit trail/reviewer traceability -->
+      
+  
+
+      <!-- New Card: Email / document ingestion -->
       <div class="benefit-card">
         <div class="benefit-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <path d="M7 7h10"/>
-            <path d="M7 12h10"/>
-            <path d="M7 17h10"/>
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <polyline points="3 7 12 13 21 7"/>
           </svg>
         </div>
-        <h3>Customizable Reports</h3>
-        <p>Flexible reporting formats tailored to your specific requirements</p>
+        <h3>Email / Document Ingestion</h3>
+        <p>Seamless ingestion of emails and documents (e.g., Embase docs) for automated processing</p>
       </div>
-    </div>
-  </div>
+
+      <!-- New Card: Region-based journal search -->
+    <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
+            <path d="M12 20v-6M6 20V10M18 20V4"/>
+            <circle cx="12" cy="4" r="2"/>
+          </svg>
+        </div>
+        <h3>Prompt Refinement</h3>
+        <p>Refine AI prompts for more accurate, context-aware literature analysis</p>
+      </div>
+
+     
 </section>
 
 <!-- Challenges & Solutions -->
 <section class="challenges-section">
   <div class="ls-container">
     <div class="section-header">
-
-      <h2>Common Literature Review Challenges</h2>
+      <h2>Key Challenges</h2>
     </div>
-
     <div class="challenges-grid">
       <div class="challenge-card">
         <div class="challenge-content">
           <div class="challenge-header">
+            <!-- Icon: Stack of papers (info overload) -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 8v4"/>
-              <path d="M12 16h.01"/>
+              <rect x="3" y="7" width="18" height="4" rx="2"/>
+              <rect x="5" y="13" width="14" height="4" rx="2"/>
+              <rect x="7" y="17" width="10" height="2" rx="1"/>
             </svg>
-            <h3>Information Overload</h3>
+            <h3>Literature Overload</h3>
           </div>
           <p>Manual processing of vast scientific literature is time-consuming and error-prone</p>
           <div class="solution">
-            <h4>Our Solution</h4>
-            <p>AI-powered processing reduces review time by 60% while maintaining accuracy</p>
+            <h4>Solution</h4>
+            <p>AI-powered processing reduces manual review time by 60% while maintaining accuracy</p>
           </div>
         </div>
       </div>
@@ -1599,16 +1622,18 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="challenge-card">
         <div class="challenge-content">
           <div class="challenge-header">
+            <!-- Icon: Magnifying glass with exclamation (missed info) -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              <path d="M12 9v4"/>
-              <path d="M12 17h.01"/>
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+              <line x1="11" y1="8" x2="11" y2="12"/>
+              <circle cx="11" cy="14" r="1"/>
             </svg>
-            <h3>Missed Critical Information</h3>
+            <h3>Missed Insights</h3>
           </div>
           <p>Important research findings and safety signals can be overlooked</p>
           <div class="solution">
-            <h4>Our Solution</h4>
+            <h4>Solution</h4>
             <p>Comprehensive scanning ensures no critical information is missed</p>
           </div>
         </div>
@@ -1617,14 +1642,21 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="challenge-card">
         <div class="challenge-content">
           <div class="challenge-header">
+            <!-- Icon: Clock with gear (resource intensive) -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <path d="M12 20v-6M6 20V10M18 20V4"/>
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+              <circle cx="18" cy="18" r="2"/>
+              <path d="M18 16v-1"/>
+              <path d="M18 21v-1"/>
+              <path d="M16 18h-1"/>
+              <path d="M21 18h-1"/>
             </svg>
-            <h3>Resource Intensive</h3>
+            <h3>Resource Heavy</h3>
           </div>
           <p>Traditional literature review requires significant time and human resources</p>
           <div class="solution">
-            <h4>Our Solution</h4>
+            <h4>Solution</h4>
             <p>Automated processing reduces resource requirements by 85%</p>
           </div>
         </div>
@@ -1632,8 +1664,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </section>
-
 <!-- Compliance Section -->
+
+
 <section class="compliance-section">
   <div class="ls-container">
     <div class="section-header">
@@ -1652,8 +1685,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3>Literature Review Standards</h3>
         <ul>
           <li>PRISMA Guidelines</li>
-          <li>CONSORT Statement</li>
-          <li>Cochrane Standards</li>
+       
           <li>ICH GCP Requirements</li>
         </ul>
       </div>
