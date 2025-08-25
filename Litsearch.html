@@ -33,6 +33,7 @@
       <link rel="stylesheet" href="assets/css/flaticon_tecz.css">
       <link rel="stylesheet" href="assets/css/spacing.css">
       <link rel="stylesheet" href="assets/css/main.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
       <style>
          /* Preloader Styles */
@@ -1138,6 +1139,7 @@ At Collabridge, we revolutionize literature surveillance with AI NLP and our Hum
                       <span class="tag"><i class="fa-light fa-check"></i>Multilingual support </span>
                       <span class="tag"><i class="fa-light fa-check"></i>Smart Agent</span>
                       <span class="tag"><i class="fa-light fa-check"></i>MedDRA mapping  </span>
+                        <span class="tag"><i class="fa-light fa-check"></i>Auto Scheduling  </span>
                     </div>
                   </div>
                   
@@ -1336,7 +1338,7 @@ document.addEventListener('DOMContentLoaded', function() {
         padding: 20px;
         border-radius: 20px;
         background: #fff;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         text-align: center;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -1596,92 +1598,1084 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
   </div>
 </section>
-
-<!-- Challenges & Solutions -->
-<!-- Challenges & Solutions -->
-<section class="challenges-section custom-challenges-section">
-  <div class="ls-container" style="max-width: 1300px; margin: 0 auto;">
-    <div class="section-header" style="margin-bottom: 40px;">
-      <h2 class="custom-challenges-title">Manual vs Our Solution</h2>
+<!-- ICSR, Coverage, Compliance, HART, Scalability Section START -->
+  <section class="ls-icrs-enterprise-section">
+  <div class="ls-container">
+    <!-- ICSR Case Classification & Workflow -->
+    <div class="section-header">
+      <h2>ICSR Case Classification & Workflow</h2>
+      <p class="ls-section-desc">Automated and human-verified ICSR triage, validation, and export—fully compliant and ready for integration.</p>
     </div>
-    <div class="custom-challenges-grid">
-      <!-- Card 1 -->
-      <div class="custom-challenge-card">
-        <div class="custom-challenge-header">
-          <span class="custom-challenge-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <rect x="3" y="7" width="18" height="4" rx="2"/>
-              <rect x="5" y="13" width="14" height="4" rx="2"/>
-              <rect x="7" y="17" width="10" height="2" rx="1"/>
-            </svg>
-          </span>
-          <span class="custom-challenge-label">Literature Overload</span>
-        </div>
-        <div class="custom-challenge-desc">
-          Manual processing of vast scientific literature is time-consuming and error-prone.
-        </div>
-        <div class="custom-challenge-divider"></div>
-        <div class="custom-challenge-solution">
-          <div class="custom-challenge-solution-title">Solution</div>
-          <div>
-            AI-powered processing reduces manual review time by 60% while maintaining accuracy.
-          </div>
-        </div>
+    <div class="icrs-workflow-grid">
+      <div>
+        <h4>
+   <span class="ls-svg-icon">
+  <i class="bi bi-layers" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Supported Case Categories
+        </h4>
+      <ul class="ls-checklist styled-case-categories" style="list-style: none; padding-left: 0; margin: 0;">
+  <li><span class="case-dot case-valid"></span> Valid ICSR</li>
+  <li><span class="case-dot case-composite"></span> Composite ICSR</li>
+  <li><span class="case-dot case-safety"></span> Safety Information</li>
+  <li><span class="case-dot case-nonrel"></span> Non-relevant</li>
+  <li><span class="case-dot case-invalid"></span> Invalid</li>
+</ul>
+<style>
+.styled-case-categories li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #fbeaec;
+  transition: background 0.2s;
+}
+.styled-case-categories li:last-child {
+  border-bottom: none;
+}
+.case-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 2px 8px #d90a2c22;
+  border: 2px solid #fff;
+}
+.case-valid { background: #1d3557; }
+.case-composite { background: #457b9d; }
+.case-safety { background: #a8dadc; border-color: #457b9d; }
+.case-nonrel { background: #f1c0e8; border-color: #d90a2c; }
+.case-invalid { background: #d90a2c; }
+.styled-case-categories li:hover {
+  background: #fbeaec;
+}
+</style>
+        <h4>
+    
+<span class="ls-svg-icon">
+  <i class="bi bi-list-task" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+PREP Validation Flow
+</h4>
+<div class="prep-flow-perfect">
+  <div class="prep-flow-step">
+    <div class="prep-flow-circle">P</div>
+    <div class="prep-flow-label">Patient</div>
+    <div class="prep-flow-desc">Entity extraction &amp; validation</div>
+  </div>
+<div class="prep-flow-arrow">
+  <i class="bi bi-arrow-right-circle-fill" style="font-size: 36px; color: #d90a2c; opacity: 0.7;"></i>
+</div>
+  <div class="prep-flow-step">
+    <div class="prep-flow-circle">R</div>
+    <div class="prep-flow-label">Reporter</div>
+    <div class="prep-flow-desc">Author/submitter check</div>
+  </div>
+ <div class="prep-flow-arrow">
+  <i class="bi bi-arrow-down-left-circle-fill" style="font-size: 36px; color: #d90a2c; opacity: 0.7;margin-top: 140px;"></i>
+</div>
+  <div class="prep-flow-step">
+    <div class="prep-flow-circle">P</div>
+    <div class="prep-flow-label">Product
+</div>
+    <div class="prep-flow-desc">Drug/compound mapping</div>
+  </div>
+<div class="prep-flow-arrow">
+  <i class="bi bi-arrow-left-circle-fill" style="font-size: 36px; color: #d90a2c; opacity: 0.7;"></i>
+</div>
+  <div class="prep-flow-step">
+    <div class="prep-flow-circle">E</div>
+    <div class="prep-flow-label">Event</div>
+    <div class="prep-flow-desc">Adverse event detection</div>
+  </div>
+</div>
+<style>
+.prep-flow-perfect {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  margin: 32px 0 18px 0;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+.prep-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  margin: 0 0;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #d90a2c11;
+  padding: 18px 22px 14px 22px;
+  border: 1.5px solid #fbeaec;
+  transition: box-shadow 0.3s, border 0.3s;
+  position: relative;
+}
+.prep-flow-step:hover {
+  box-shadow: 0 8px 24px #d90a2c22;
+  border: 1.5px solid #d90a2c;
+}
+.prep-flow-circle {
+  width: 44px;
+  height: 44px;
+  background: #d90a2c;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px #d90a2c33;
+  letter-spacing: 1px;
+}
+.prep-flow-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d3557;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+.prep-flow-desc {
+  font-size: 13px;
+  color: #457b9d;
+  margin-bottom: 0;
+  text-align: center;
+}
+.prep-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 6px;
+}
+@media (max-width: 900px) {
+  .prep-flow-perfect {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .prep-flow-arrow {
+    transform: rotate(90deg);
+    margin: 0 0 8px 0;
+  }
+  .prep-flow-step {
+    margin-bottom: 12px;
+    width: 100%;
+    min-width: 0;
+  }
+}
+</style>
       </div>
-      <!-- Card 2 -->
-      <div class="custom-challenge-card">
-        <div class="custom-challenge-header">
-          <span class="custom-challenge-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <circle cx="11" cy="11" r="8"/>
-              <path d="m21 21-4.3-4.3"/>
-              <line x1="11" y1="8" x2="11" y2="12"/>
-              <circle cx="11" cy="14" r="1"/>
-            </svg>
-          </span>
-          <span class="custom-challenge-label">Missed Insights</span>
-        </div>
-        <div class="custom-challenge-desc">
-          Important research findings and safety signals can be overlooked.
-        </div>
-        <div class="custom-challenge-divider"></div>
-        <div class="custom-challenge-solution">
-          <div class="custom-challenge-solution-title">Solution</div>
-          <div>
-            Comprehensive scanning ensures no critical information is missed.
-          </div>
-        </div>
+     <div>
+  <h4>
+<span class="ls-svg-icon">
+  <i class="bi bi-file-earmark-code" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+E2B (R3) Export & Integration
+  </h4>
+<!-- Style for E2B (R3) Export & Integration checklist -->
+<ul class="ls-checklist e2b-checklist" style="list-style: none; padding-left: 0; margin: 0;">
+  <li><span class="e2b-dot e2b-ready"></span> E2B (R3) XML export readiness</li>
+  <li><span class="e2b-dot e2b-integration"></span> Direct integration with Argus, ArisG</li>
+  <li><span class="e2b-dot e2b-auto"></span> Automated case handoff to safety DBs</li>
+</ul>
+<style>
+.e2b-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #fbeaec;
+  transition: background 0.2s;
+}
+.e2b-checklist li:last-child {
+  border-bottom: none;
+}
+.e2b-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 2px 8px #d90a2c22;
+  border: 2px solid #fff;
+}
+.e2b-ready { background: #1d3557; }
+.e2b-integration { background: #1d3557; }
+.e2b-auto { background: #1d3557; }
+.e2b-checklist li:hover {
+  background: #fbeaec;
+}
+</style>
+  <h4 style="margin-top: 38px;">
+<span class="ls-svg-icon">
+  <i class="bi bi-diagram-3" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Workflow Visualization
+</h4>
+<div class="vertical-flow-diagram">
+  <div class="vertical-flow-step">
+    <span class="vertical-flow-icon">
+      <i class="bi bi-journal-text"></i>
+    </span>
+    <div class="vertical-flow-label">Article Triaged</div>
+  </div>
+  <div class="vertical-flow-arrow">
+    <i class="bi bi-arrow-down-circle-fill"></i>
+  </div>
+  <div class="vertical-flow-step">
+    <span class="vertical-flow-icon">
+      <i class="bi bi-patch-check"></i>
+    </span>
+    <div class="vertical-flow-label">PREP Validated</div>
+  </div>
+  <div class="vertical-flow-arrow">
+    <i class="bi bi-arrow-down-circle-fill"></i>
+  </div>
+  <div class="vertical-flow-step">
+    <span class="vertical-flow-icon">
+      <i class="bi bi-file-earmark-code"></i>
+    </span>
+    <div class="vertical-flow-label">E2B Exported</div>
+  </div>
+</div>
+<style>
+.vertical-flow-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 32px 0 18px 0;
+  min-width: 220px;
+}
+.vertical-flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #d90a2c11;
+  padding: 22px 28px 16px 28px;
+  border: 1.5px solid #fbeaec;
+  margin-bottom: 0;
+  width: 220px;
+  position: relative;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.vertical-flow-step:hover {
+  box-shadow: 0 8px 24px #d90a2c22;
+  border: 1.5px solid #d90a2c;
+}
+.vertical-flow-icon {
+  width: 48px;
+  height: 48px;
+  background: #fbeaec;
+  color: #d90a2c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px #d90a2c22;
+}
+.vertical-flow-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1d3557;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.vertical-flow-desc {
+  font-size: 14px;
+  color: #457b9d;
+  margin-bottom: 0;
+  text-align: center;
+}
+.vertical-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 32px;
+  color: #d90a2c;
+  opacity: 0.7;
+}
+@media (max-width: 600px) {
+  .vertical-flow-step {
+    width: 98vw;
+    min-width: 0;
+    padding: 18px 8px 12px 8px;
+  }
+}
+</style>
+     </div>
+    </div>
+
+    <!-- Literature Coverage & Ingestion -->
+    <div class="section-header">
+      <h2>Literature Coverage & Ingestion</h2>
+    </div>
+    <div class="coverage-ingestion-grid">
+     <div>
+  <h4>
+   <span class="ls-svg-icon">
+  <i class="bi bi-database" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Data Sources
+  </h4>
+  <ul class="ls-checklist ds-list">
+    <li><span class="ds-dot"></span>PubMed</li>
+    <li><span class="ds-dot"></span>Embase</li>
+    <li><span class="ds-dot"></span>Google Scholar</li>
+    <li><span class="ds-dot"></span>Regional Journals (Gulf, EU, APAC, etc.)</li>
+    <li><span class="ds-dot"></span>Local language databases</li>
+  </ul>
+  <h4 style="margin-top: 32px;">
+ <span class="ls-svg-icon">
+  <i class="bi bi-file-earmark-arrow-down" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Ingestion Methods
+  </h4>
+  <ul class="ls-checklist ds-list">
+    <li><span class="ds-dot"></span>PDF, Word, Email, Scanned Docs (OCR)</li>
+    <li><span class="ds-dot"></span>Automated email/document ingestion</li>
+  </ul>
+</div>
+<style>
+.ds-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 18px 0;
+}
+.ds-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.ds-list li:last-child {
+  border-bottom: none;
+}
+.ds-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d90a2c;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px #d90a2c11;
+}
+.ds-list li:hover {
+  background: #fbeaec;
+}
+</style>
+<div>
+  <h4>
+    <span class="ls-svg-icon">
+      <i class="bi bi-translate" style="color: #d90a2c; font-size: 22px;"></i>
+    </span>
+    Multilingual Search
+  </h4>
+  <ul class="ls-checklist ds-list">
+    <li><span class="ds-dot"></span>Supported Major Languages</li>
+    <li><span class="ds-dot"></span>Arabic, Chinese, Japanese, Russian, and more</li>
+    <li><span class="ds-dot"></span>Automatic language detection for abstracts and full texts</li>
+    <li><span class="ds-dot"></span>AI-powered translation for non-English articles</li>
+    <li><span class="ds-dot"></span>Handles local language journals and region-specific publications</li>
+    <li><span class="ds-dot"></span>Supports right-to-left scripts (Arabic, Hebrew, etc.)</li>
+    <li><span class="ds-dot"></span>Consistent terminology mapping across languages (e.g., MedDRA, WHO-ART)</li>
+  </ul>
+  <div class="ls-multilingual-note" style="background:#fbeaec; border-radius:10px; padding:10px 16px; margin:12px 0 0 0; color:#1d3557; font-size:15px;">
+    <b>Tip:</b> Multilingual search ensures no critical safety information is missed, even in local or non-English journals.
+  </div>
+  <h4 style="margin-top: 32px;">
+    <span class="ls-svg-icon">
+      <i class="bi bi-funnel" style="color: #d90a2c; font-size: 22px;"></i>
+    </span>
+    Region/Country Filters
+  </h4>
+  <div class="ls-region-filter">
+    <b>
+      <svg width="16" height="16" fill="none" stroke="#d90a2c" stroke-width="2"><circle cx="8" cy="8" r="7"/><path d="M8 2v12"/><path d="M2 8h12"/></svg>
+      Example:
+    </b>
+    <span style="color:#d90a2c;">Search only Gulf region journals</span>
+  </div>
+  <ul class="ls-checklist ds-list" style="margin: 10px 0 0 0;">
+    <li><span class="ds-dot"></span>Filter by continent, country, or custom region</li>
+    <li><span class="ds-dot"></span>Combine region and language filters for precise results</li>
+    <li><span class="ds-dot"></span>Supports regulatory-specific regions (EU, APAC, MENA, etc.)</li>
+    <li><span class="ds-dot"></span>Ideal for local compliance and pharmacovigilance requirements</li>
+    <li><span class="ds-dot"></span>Quickly identify region-specific safety signals and trends</li>
+  </ul>
+  <div class="ls-region-note" style="background:#fbeaec; border-radius:10px; padding:10px 16px; margin:12px 0 0 0; color:#1d3557; font-size:15px;">
+    <b>Did you know?</b> Region/country filters help you comply with local regulations and focus on relevant literature for your markets.
+  </div>
+</div>
+    </div>
+
+    <!-- Compliance & Audit Trail -->
+    <div class="section-header">
+      <h2>Compliance & Audit Trail</h2>
+    </div>
+    <div class="compliance-audit-grid">
+     <div>
+  <h4>
+ <span class="ls-svg-icon">
+  <i class="bi bi-shield-check" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Audit Trail
+  </h4>
+  <ul class="ls-checklist audit-list">
+    <li><span class="audit-dot"></span>Timestamps for all actions</li>
+    <li><span class="audit-dot"></span>Reviewer IDs & electronic signatures</li>
+    <li><span class="audit-dot"></span>Version history & change log</li>
+    <li><span class="audit-dot"></span>Automated audit log export for compliance reviews</li>
+    <li><span class="audit-dot"></span>Immutable logs to prevent tampering</li>
+  </ul>
+  <div class="audit-note">
+    <b>Why it matters:</b> Every action is tracked and auditable, supporting regulatory inspections and internal QA.
+  </div>
+  <h4 style="margin-top: 32px;">
+ <span class="ls-svg-icon">
+  <i class="bi bi-fingerprint" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Traceability
+  </h4>
+  <ul class="ls-checklist audit-list">
+    <li><span class="audit-dot"></span>21 CFR Part 11 electronic signature</li>
+    <li><span class="audit-dot"></span>Reviewer traceability & role-based access</li>
+    <li><span class="audit-dot"></span>Full reviewer action history for each case</li>
+    <li><span class="audit-dot"></span>Granular access logs for every user</li>
+  </ul>
+  
+</div>
+<style>
+.audit-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 18px 0;
+}
+.audit-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.audit-list li:last-child {
+  border-bottom: none;
+}
+.audit-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d90a2c;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px #d90a2c11;
+}
+.audit-list li:hover {
+  background: #fbeaec;
+}
+.audit-note {
+  background: #fbeaec;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin: 12px 0 0 0;
+  color: #1d3557;
+  font-size: 15px;
+  box-shadow: 0 2px 8px #d90a2c11;
+  border-left: 4px solid #d90a2c;
+}
+</style>
+ <div>
+  <h4>
+  <span class="ls-svg-icon">
+  <i class="bi bi-file-earmark" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Validation & SOP Package
+  </h4>
+  <ul class="ls-checklist sop-list">
+    <li><span class="sop-dot"></span>URS → FRS → IQ/OQ/PQ documentation</li>
+    <li><span class="sop-dot"></span>Validation protocols for EMA/US FDA</li>
+    <li><span class="sop-dot"></span>Comprehensive SOPs for all workflows</li>
+    <li><span class="sop-dot"></span>Change management and version control</li>
+    <li><span class="sop-dot"></span>Periodic review and revalidation</li>
+  </ul>
+  <div class="sop-note">
+    <b>Why it matters:</b> Robust validation and SOPs ensure regulatory compliance, audit readiness, and consistent quality across all processes.
+  </div>
+  <h4 style="margin-top: 32px;">
+<span class="ls-svg-icon">
+  <i class="bi bi-lightbulb" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Case Study  
+  </h4>
+  <div class="ls-case-study">
+<b>
+  <svg width="16" height="16" fill="none" stroke="#d90a2c" stroke-width="2"><circle cx="8" cy="8" r="7"/><path d="M5 8l2 2 4-4"/></svg>
+</b>
+Collabridge platform successfully completed full validation with comprehensive audit trail and reviewer traceability, demonstrating robust compliance and end-to-end Management  </div>
+</div>
+<style>
+.sop-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 18px 0;
+}
+.sop-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.sop-list li:last-child {
+  border-bottom: none;
+}
+.sop-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d90a2c;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px #d90a2c11;
+}
+.sop-list li:hover {
+  background: #fbeaec;
+}
+.sop-note {
+  background: #fbeaec;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin: 12px 0 0 0;
+  color: #1d3557;
+  font-size: 15px;
+  box-shadow: 0 2px 8px #d90a2c11;
+  border-left: 4px solid #d90a2c;
+}
+</style>
+    </div>
+
+    <!-- HART (Human + AI Review Technology) -->
+    <div class="section-header">
+      <h2>Human + AI Review Technology (HART)</h2>
+    </div>
+    <div class="hart-grid">
+   <div>
+  <h4>
+<span class="ls-svg-icon">
+  <i class="bi bi-arrow-repeat" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+    Hybrid Review Loop
+  </h4>
+  <ul class="ls-checklist hart-list">
+    <li><span class="hart-dot"></span>AI highlights abstracts and proposes case category</li>
+    <li><span class="hart-dot"></span>Human reviewer confirms, overrides, or adds notes</li>
+    <li><span class="hart-dot"></span>All actions and decisions logged for traceability</li>
+    <li><span class="hart-dot"></span>Supports multi-level review (QC, MR, final sign-off)</li>
+    <li><span class="hart-dot"></span>Reviewer feedback used to continuously improve AI accuracy</li>
+  </ul>
+  <div class="hart-note">
+    <b>How it works:</b> The HART loop combines AI speed with human expertise, ensuring every literature case is reviewed efficiently and compliantly.
+  </div>
+
+
+
+</div>
+<style>
+.hart-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 18px 0;
+}
+.hart-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.hart-list li:last-child {
+  border-bottom: none;
+}
+.hart-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d90a2c;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px #d90a2c11;
+}
+.hart-list li:hover {
+  background: #fbeaec;
+}
+.hart-note {
+  background: #fbeaec;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin: 12px 0 0 0;
+  color: #1d3557;
+  font-size: 15px;
+  box-shadow: 0 2px 8px #d90a2c11;
+  border-left: 4px solid #d90a2c;
+}
+</style>
+      <div>
+        <h4>
+      <span class="ls-svg-icon">
+  <i class="bi bi-people" style="color: #d90a2c; font-size: 22px;"></i>
+</span>
+Multi-Reviewer Workflows
+        </h4>
+  <ul class="ls-checklist hart-list">
+          <li>QC and MR reviewers see AI + previous notes</li>
+          <li>Full reviewer chain for compliance</li>
+        </ul>
+        <img src="assets/WebImages/expwebp/HART.jpg" alt="HART Human-AI Loop" class="ls-img-diagram">
+        <div class="ls-caption">Sample: Human + AI feedback loop with explainability</div>
       </div>
-      <!-- Card 3 -->
-      <div class="custom-challenge-card">
-        <div class="custom-challenge-header">
-          <span class="custom-challenge-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d90a2c" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-              <circle cx="18" cy="18" r="2"/>
-              <path d="M18 16v-1"/>
-              <path d="M18 21v-1"/>
-              <path d="M16 18h-1"/>
-              <path d="M21 18h-1"/>
-            </svg>
-          </span>
-          <span class="custom-challenge-label">Resource Heavy</span>
-        </div>
-        <div class="custom-challenge-desc">
-          Traditional literature review requires significant time and human resources.
-        </div>
-        <div class="custom-challenge-divider"></div>
-        <div class="custom-challenge-solution">
-          <div class="custom-challenge-solution-title">Solution</div>
-          <div>
-            Automated processing reduces resource requirements by 85%.
-          </div>
-        </div>
+    </div>
+
+    <!-- Enterprise Scalability & Integration -->
+    <div class="section-header">
+      <h2>Enterprise Scalability & Integration</h2>
+    </div>
+<div class="scalability-integration-grid">
+  <div>
+    <h4>
+      <span class="ls-svg-icon">
+        <i class="bi bi-bar-chart-line" style="color: #d90a2c; font-size: 22px;"></i>
+      </span>
+      Scalability Metrics
+    </h4>
+    <ul class="ls-checklist metrics-list">
+      <li>
+        <i class="bi bi-graph-up-arrow metric-icon"></i>
+        Scales to 10M+ articles
+      </li>
+      <li>
+        <i class="bi bi-people metric-icon"></i>
+        <b>50+ concurrent reviewers</b>
+      </li>
+      <li>
+        <i class="bi bi-cloud-check metric-icon"></i>
+        <b>99.9% uptime (SLA)</b> 
+      </li>
+    </ul>
+    <h4>
+      <span class="ls-svg-icon">
+        <i class="bi bi-diagram-3" style="color: #d90a2c; font-size: 22px;"></i>
+      </span>
+      Architecture
+    </h4>
+    <ul class="ls-checklist metrics-list">
+      <li>
+        <i class="bi bi-boxes metric-icon"></i>
+        Containerized microservices
+      </li>
+      <li>
+        <i class="bi bi-diagram-2 metric-icon"></i>
+        API-first, multi-tenant, role-based access
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4>
+      <span class="ls-svg-icon">
+        <i class="bi bi-plug" style="color: #d90a2c; font-size: 22px;"></i>
+      </span>
+      Integrations
+    </h4>
+    <ul class="ls-checklist metrics-list">
+      <li>
+        <i class="bi bi-arrow-left-right metric-icon"></i>
+        REST APIs for Argus, ArisG, Ennov
+      </li>
+      <li>
+        <i class="bi bi-cloud-arrow-up metric-icon"></i>
+        CRM (Veeva), cloud storage
+      </li>
+    </ul>
+    <h4>
+      <span class="ls-svg-icon">
+        <i class="bi bi-lightbulb" style="color: #d90a2c; font-size: 22px;"></i>
+      </span>
+      Case Study
+    </h4>
+    <div class="ls-case-study better-case-study">
+      <i class="bi bi-patch-check-fill" style="color: #d90a2c; font-size: 18px; margin-right: 8px;"></i>
+      <b>Used by leading global pharma:</b>
+      <div class="case-study-details">
+        <i class="bi bi-file-earmark-bar-graph" style="color: #457b9d; font-size: 16px; margin-right: 6px;"></i>
+        Processes <b>500,000+</b> articles/month<br>
+        <i class="bi bi-cloud-check" style="color: #457b9d; font-size: 16px; margin-right: 6px;"></i>
+        <b>99.9%</b> uptime
       </div>
     </div>
   </div>
+</div>
+<style>
+/* filepath: c:\Users\PhaniChitta\OneDrive - Collabridge\Desktop\collabridge_website\Litsearch.html */
+.scalability-integration-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.scalability-integration-grid > div {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(29,53,87,0.06);
+  padding: 38px 32px 28px 32px;
+  margin-bottom: 20px;
+  border: 1.5px solid #eef2f3;
+  position: relative;
+  transition: box-shadow 0.3s, border 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.scalability-integration-grid > div:hover {
+  box-shadow: 0 12px 40px rgba(29,53,87,0.13);
+  border: 1.5px solid #d90a2c;
+}
+.metrics-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 18px 0;
+}
+.metrics-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1d3557;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+.metrics-list li:last-child {
+  border-bottom: none;
+}
+.metric-icon {
+  color: #d90a2c;
+  font-size: 20px;
+  min-width: 22px;
+}
+.metrics-list li:hover {
+  background: #fbeaec;
+}
+.better-case-study {
+  background: #fbeaec;
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px #d90a2c11;
+  font-size: 16px;
+  margin-top: 12px;
+  color: #1d3557;
+  border-left: 4px solid #d90a2c;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.better-case-study b {
+  color: #d90a2c;
+}
+.case-study-details {
+  margin-left: 0;
+  margin-top: 6px;
+  color: #457b9d;
+  font-size: 15px;
+  line-height: 1.6;
+}
+@media (max-width: 992px) {
+  .scalability-integration-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .scalability-integration-grid > div {
+    padding: 22px 10px 16px 10px;
+  }
+}
+</style>
+  </div>
 </section>
+<style>
+.ls-icrs-enterprise-section {
+  padding: 80px 0 60px 0;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2f3 100%);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+  margin: 60px 0;
+}
+.ls-icrs-enterprise-section .section-header h2 {
+  font-size: 34px;
+  color: #1d3557;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.ls-section-desc {
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  color: #457b9d;
+  font-size: 18px;
+  text-align: center;
+}
+.icrs-workflow-grid,
+.coverage-ingestion-grid,
+.compliance-audit-grid,
+.hart-grid,
+.scalability-integration-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.icrs-workflow-grid > div,
+.coverage-ingestion-grid > div,
+.compliance-audit-grid > div,
+.hart-grid > div,
+.scalability-integration-grid > div {
+  flex: 1;
+  min-width: 260px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(29,53,87,0.06);
+  padding: 36px 30px 28px 30px;
+  margin-bottom: 20px;
+  border: 1.5px solid #eef2f3;
+  position: relative;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.icrs-workflow-grid > div:hover,
+.coverage-ingestion-grid > div:hover,
+.compliance-audit-grid > div:hover,
+.hart-grid > div:hover,
+.scalability-integration-grid > div:hover {
+  box-shadow: 0 12px 40px rgba(29,53,87,0.13);
+  border: 1.5px solid #d90a2c;
+}
+.ls-check {
+  color: #d90a2c;
+  font-weight: bold;
+  margin-right: 8px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.ls-svg-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.ls-img-diagram {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #d90a2c22;
+  margin: 18px 0 8px 0;
+  display: block;
+  border: 1.5px solid #fbeaec;
+}
+.ls-caption {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 0;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ls-region-filter,
+.ls-case-study {
+  background: #fbeaec;
+  border-radius: 10px;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px #d90a2c11;
+  font-size: 16px;
+  margin-top: 12px;
+  color: #1d3557;
+  border-left: 4px solid #d90a2c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 992px) {
+  .ls-icrs-enterprise-section {
+    border-radius: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 40px 0 20px 0;
+  }
+  .icrs-workflow-grid,
+  .coverage-ingestion-grid,
+  .compliance-audit-grid,
+  .hart-grid,
+  .scalability-integration-grid {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .icrs-workflow-grid > div,
+  .coverage-ingestion-grid > div,
+  .compliance-audit-grid > div,
+  .hart-grid > div,
+  .scalability-integration-grid > div {
+    padding: 22px 10px 16px 10px;
+  }
+  .ls-img-diagram {
+    max-width: 100%;
+  }
+}
+</style>
+<!-- Challenges & Solutions -->
+<!-- Move this section above the ICSR, Coverage, Compliance, HART, Scalability Section -->
+<!-- Challenges & Solutions -->
+  <section class="challenges-section custom-challenges-section" style="margin-top: -100px;">
+  <div class="ls-container" style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-header" style="margin-bottom: 30px;">
+      <h2 class="custom-challenges-title">Manual vs Our Solution</h2>
+    </div>
+    <div class="differentiation-table-wrapper" style="margin-top: -20px;">
+      <table class="table table-bordered differentiation-table" style="background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.08);">
+        <thead style="background:#fbeaec;">
+          <tr>
+            <th style="width: 32%;">Challenge</th>
+            <th style="width: 34%; text-align:center;">
+              <i class="bi bi-person-lines-fill" style="color:#d90a2c; font-size: 22px;"></i>
+              Manual Approach
+            </th>
+            <th style="width: 34%; text-align:center;">
+              <i class="bi bi-cpu" style="color:#d90a2c; font-size: 22px;"></i>
+              Collabridge Solution
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <i class="bi bi-stack" style="color:#d90a2c; font-size: 20px; margin-right:8px;"></i>
+              Literature Overload
+            </td>
+            <td>
+              <i class="bi bi-clock-history" style="color:#d90a2c; font-size: 18px; margin-right:6px;"></i>
+              Time-consuming, error-prone manual review of large volumes.
+            </td>
+            <td>
+              <i class="bi bi-lightning-charge" style="color:#1d3557; font-size: 18px; margin-right:6px;"></i>
+              <b>AI-powered</b> review reduces manual time by <b>60%</b> with high accuracy.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i class="bi bi-search" style="color:#d90a2c; font-size: 20px; margin-right:8px;"></i>
+              Missed Insights
+            </td>
+            <td>
+              <i class="bi bi-exclamation-triangle" style="color:#d90a2c; font-size: 18px; margin-right:6px;"></i>
+              Critical findings and safety signals can be overlooked.
+            </td>
+            <td>
+              <i class="bi bi-eye" style="color:#1d3557; font-size: 18px; margin-right:6px;"></i>
+              <b>Comprehensive scanning</b> ensures no critical information is missed.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i class="bi bi-people" style="color:#d90a2c; font-size: 20px; margin-right:8px;"></i>
+              Resource Heavy
+            </td>
+            <td>
+              <i class="bi bi-person-workspace" style="color:#d90a2c; font-size: 18px; margin-right:6px;"></i>
+              Requires significant time and human resources.
+            </td>
+            <td>
+              <i class="bi bi-robot" style="color:#1d3557; font-size: 18px; margin-right:6px;"></i>
+              <b>Automated processing</b> reduces resource needs by <b>85%</b>.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<style>
+.differentiation-table-wrapper {
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.differentiation-table th, .differentiation-table td {
+  vertical-align: middle !important;
+  font-size: 16px;
+  color: #1d3557;
+  background: #fff;
+  border-color: #fbeaec !important;
+  padding: 18px 16px;
+}
+.differentiation-table th {
+  font-size: 18px;
+  font-weight: 700;
+  background: #fbeaec !important;
+  color: #d90a2c;
+  text-align: center;
+}
+.differentiation-table td b {
+  color: #d90a2c;
+}
+@media (max-width: 900px) {
+  .differentiation-table th, .differentiation-table td {
+    font-size: 14px;
+    padding: 12px 8px;
+  }
+  .differentiation-table-wrapper {
+    margin-top: 30px;
+  }
+}
+</style>
 <!-- Compliance Section -->
 <style>
 /* ...existing styles... */
@@ -1703,7 +2697,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .custom-challenge-card {
   background: #fff;
   border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(29,53,87,0.10);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
   padding: 38px 32px 32px 32px;
   display: flex;
   flex-direction: column;
@@ -1747,9 +2741,9 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
 
-<section class="compliance-section">
+<section class="compliance-section" style="margin-top: -80px;">
   <div class="ls-container">
-    <div class="section-header">
+    <div class="section-header" style="margin-top: -40px;">
 
       <h2>Regulatory Compliance</h2>
     </div>
@@ -1807,6 +2801,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <style>
+
+  
 /* Common Section Styles */
 .why-choose-section,
 .challenges-section,
@@ -2348,7 +3344,7 @@ document.addEventListener('DOMContentLoaded', function() {
   modal.innerHTML = `
     <div class="modal-content" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:900px;">
       <span class="close-modal" style="position:absolute;top:-40px;right:-40px;color:#fff;font-size:30px;cursor:pointer;z-index:1;">&times;</span>
-      <video id="popupVideo" controls style="width:100%;height:auto;border-radius:10px;">
+      <video id="popupVideo" controls autoplay style="width:100%;height:auto;border-radius:10px;">
         <source src="" type="video/mp4">
         Your browser does not support the video tag.
       </video>
