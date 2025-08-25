@@ -260,6 +260,170 @@
     }
 }
          </style>
+         <style>
+          /* ...existing code... */
+
+/* General mobile fixes */
+@media (max-width: 600px) {
+  body, html {
+    font-size: 15px !important;
+    overflow-x: hidden !important;
+  }
+  .ls-container,
+  .container {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .ls-content-wrapper {
+    padding: 10px !important;
+    border-radius: 12px !important;
+  }
+  .section-header h2,
+  .breadcrumb-title {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+  }
+  .highlight {
+    font-size: 1.1rem !important;
+  }
+  .feature-tags {
+    gap: 8px !important;
+  }
+  .tag {
+    padding: 7px 12px !important;
+    font-size: 13px !important;
+  }
+  .content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .visual-wrapper,
+  .main-video {
+    border-radius: 10px !important;
+  }
+  .info-cards {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .info-card {
+    max-width: 100% !important;
+    padding: 14px !important;
+    border-radius: 12px !important;
+  }
+  .benefits-grid,
+  .challenges-grid,
+  .compliance-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
+  }
+  .benefit-card,
+  .challenge-card,
+  .compliance-card {
+    padding: 15px !important;
+    border-radius: 12px !important;
+  }
+  .prep-flow-step,
+  .vertical-flow-step {
+    padding: 10px 4px 8px 4px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+  }
+  .vertical-flow-diagram {
+    min-width: 0 !important;
+  }
+  .ls-img-diagram {
+    max-width: 100% !important;
+    border-radius: 10px !important;
+  }
+  .differentiation-table th, .differentiation-table td {
+    font-size: 13px !important;
+    padding: 7px 4px !important;
+  }
+  .footer-area,
+  .tp-footer-top,
+  .tp-footer-bottom {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .tp-footer-widget,
+  .location-office-item {
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+  .tp-footer-widget-title {
+    font-size: 1.1rem !important;
+  }
+  .tp-footer-expertise-list li,
+  .video-text-links li {
+    font-size: 14px !important;
+  }
+  .tp-footer-widget-newsletter-input input {
+    font-size: 14px !important;
+    padding: 8px !important;
+  }
+  .tp-footer-widget-newsletter-submit button {
+    font-size: 16px !important;
+  }
+  .ls-case-study, .ls-region-filter, .audit-note, .sop-note, .hart-note, .better-case-study {
+    font-size: 13px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+  }
+  .stat-item {
+    font-size: 13px !important;
+  }
+  .stat-number {
+    font-size: 18px !important;
+  }
+  .stat-label {
+    font-size: 12px !important;
+  }
+  .breadcrumb-area {
+    padding: 0 !important;
+  }
+  .breadcrumb-title {
+    font-size: 1.2rem !important;
+  }
+  .stats-container {
+    top: 120px !important;
+    padding: 0 4px !important;
+  }
+}
+
+/* Hide video overlay on mobile for easier interaction */
+@media (max-width: 600px) {
+  .video-overlay {
+    opacity: 1 !important;
+    background: rgba(29, 53, 87, 0.1) !important;
+  }
+  .play-button {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Ensure tables are scrollable on mobile */
+@media (max-width: 600px) {
+  .differentiation-table-wrapper {
+    overflow-x: auto !important;
+  }
+  .differentiation-table {
+    min-width: 600px !important;
+  }
+}
+
+/* Fix for footer columns stacking */
+@media (max-width: 991px) {
+  .footer-area .row > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+}
+         </style>
    </head>
    <body>
 
@@ -1771,6 +1935,62 @@ PREP Validation Flow
     width: 100%;
     min-width: 0;
   }
+}
+/* Add this after your existing .prep-flow-perfect styles */
+@media (max-width: 900px) {
+  .prep-flow-perfect {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .prep-flow-step {
+    min-width: 48vw !important;
+    width: 48vw !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .prep-flow-arrow {
+    display: none !important;
+  }
+}
+/* For very small screens, stack vertically */
+@media (max-width: 600px) {
+  .prep-flow-perfect {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+  .prep-flow-step {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 10px !important;
+  }
+}
+/* Mobile: reorder PREP steps to P, R, E, P */
+@media (max-width: 900px) {
+  .prep-flow-perfect {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .prep-flow-step {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .prep-flow-arrow {
+    display: none !important;
+  }
+  /* Order: Patient (1), Reporter (2), Event (3), Product (4) */
+  .prep-flow-step:nth-of-type(1) { order: 1; } /* Patient */
+  .prep-flow-step:nth-of-type(3) { order: 2; } /* Reporter */
+  .prep-flow-step:nth-of-type(5) { order: 3; } /* Product (will be moved to last below) */
+  .prep-flow-step:nth-of-type(7) { order: 4; } /* Event */
+  /* Swap Product and Event for mobile PREP order */
+  .prep-flow-step:nth-of-type(5) { order: 4; } /* Product LAST */
+  .prep-flow-step:nth-of-type(7) { order: 3; } /* Event BEFORE Product */
 }
 </style>
       </div>
