@@ -2023,7 +2023,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 </style>
-<!-- ...existing code... -->
   
   
  
@@ -2270,6 +2269,39 @@ document.addEventListener('DOMContentLoaded', function() {
   
   document.addEventListener('DOMContentLoaded', initMobileMenu);
   </script>
+
+  <script>
+// Set your initial values and daily increments
+const statConfig = [
+  { selector: '.counter[data-count="500000"]', base: 500000, daily: 241 },
+  { selector: '.counter[data-count="1200000"]', base: 1200000, daily: 150 },
+  { selector: '.counter[data-count="98000"]', base: 98000, daily: 142 }
+];
+
+// Set your launch date (YYYY-MM-DD)
+const launchDate = new Date('2025-08-25'); // Set to your launch date
+
+function getDaysSinceLaunch() {
+  const now = new Date();
+  const diff = now - launchDate;
+  return Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+}
+
+function updateDynamicStats() {
+  const days = getDaysSinceLaunch();
+  statConfig.forEach(cfg => {
+    const el = document.querySelector(cfg.selector);
+    if (el) {
+      const newVal = cfg.base + (cfg.daily * days);
+      el.setAttribute('data-count', newVal);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  updateDynamicStats();
+});
+</script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         const loader = document.getElementById('loading');
@@ -2298,7 +2330,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     </script>
- <!-- ...existing code... -->
 <script>
 // Video Popup Modal for .video-popup links (footer)
 document.addEventListener('DOMContentLoaded', function() {
